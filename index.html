@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Love Declaration</title>
+    <title>恋爱申请书</title>
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <style>
       body{margin: 10px;}
@@ -16,6 +16,8 @@
                 var yPos = parseInt(en.pageY-520) + "px"; 
                 $("#adx").css("left", xPos);  
                 $("#adx").css("top", yPos);  
+                $("#adx2").css("left", xPos);  
+                $("#adx2").css("top", yPos); 
             });
             $("#rethink").hover(
                 function () {
@@ -25,9 +27,20 @@
                     $("#adx").fadeOut(1000);
                 }
             );
+            $("#accept").hover(
+                function () {
+                    $("#adx2").fadeIn(1000);
+                },
+                function () {
+                    $("#adx2").fadeOut(1000);
+                }
+            );            
         })
-    
+        function jump(){
+            window.location.href="love_declaration.html";
+        }    
     </script>
+    
 </head>
 <body>
    <!--<img src="map.gif">--> 
@@ -36,12 +49,13 @@
        <fieldset class="layui-elem-field site-demo-button" >
         <legend align="center">恋爱申请</legend>
         <div>
-          <button type="button" class="layui-btn layui-btn-warm layui-btn-radius"><i class="layui-icon layui-icon-ok-circle"></i>欣然接受</button> 
-          <button id="rethink" type="button" class="layui-btn layui-btn-danger layui-btn-radius" onclick="javascript:void(0)"><i class="layui-icon layui-icon-loading"></i>容朕考虑</button> 
+          <button id="accept" type="button"  class="layui-btn layui-btn-warm layui-btn-radius" onclick="jump()"><i class="layui-icon layui-icon-ok-circle"></i>欣然接受</button> 
+          <button id="rethink" type="button" class="layui-btn layui-btn-danger layui-btn-radius" onclick="alert('请你再看看楠哥的优点！')" ><i class="layui-icon layui-icon-loading"></i>容朕考虑</button> 
           <button type="button" class="layui-btn layui-btn-disabled layui-btn-radius"><i class="layui-icon layui-icon-close"></i>断不同意</button>
         </div>
       </fieldset>
     </div>
   <div id='adx' style="display:none; position: absolute"><img src="word_cloud.png"/></div>
+  <div id='adx2' style="display:none; position: absolute"><img src="map.gif" width="80%" height="80%"/></div>
 </body>
 </html>
