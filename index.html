@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Love Declaration</title>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <style>
+      body{margin: 10px;}
+    </style>
+    <script type="text/javascript" src="layui/jquery.min.js"></script>
+    <script type="text/javascript">
+            $(function(){
+            $(document).mousemove(function (en) {  
+                var xPos = parseInt(en.pageX+15) + "px";
+                var yPos = parseInt(en.pageY-520) + "px"; 
+                $("#adx").css("left", xPos);  
+                $("#adx").css("top", yPos);  
+            });
+            $("#rethink").hover(
+                function () {
+                    $("#adx").fadeIn(2000);
+                },
+                function () {
+                    $("#adx").fadeOut(1000);
+                }
+            );
+        })
+    
+    </script>
+</head>
+<body>
+   <!--<img src="map.gif">--> 
+   <div align="center"><img src="love_application.jpg" /></div> 
+   <fieldset class="layui-elem-field site-demo-button" align="center">
+    <legend>恋爱申请</legend>
+    <div>
+      <button type="button" class="layui-btn layui-btn-warm layui-btn-radius"><i class="layui-icon layui-icon-ok-circle"></i>欣然接受</button> 
+      <button id="rethink" type="button" class="layui-btn layui-btn-danger layui-btn-radius" onclick="javascript:void(0)"><i class="layui-icon layui-icon-loading"></i>容朕考虑</button> 
+      <button type="button" class="layui-btn layui-btn-disabled layui-btn-radius"><i class="layui-icon layui-icon-close"></i>断不同意</button>
+    </div>
+  </fieldset>
+
+  <div id='adx' style="display:none; position: absolute"><img src="word_cloud.png"/></div>
+</body>
+</html>
