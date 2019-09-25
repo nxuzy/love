@@ -14,10 +14,11 @@
             $(document).mousemove(function (en) {  
                 var xPos = parseInt(en.pageX+15) + "px";
                 var yPos = parseInt(en.pageY-520) + "px"; 
+                var yPos2 = parseInt(en.pageY-620) + "px"; 
                 $("#adx").css("left", xPos);  
                 $("#adx").css("top", yPos);  
                 $("#adx2").css("left", xPos);  
-                $("#adx2").css("top", yPos); 
+                $("#adx2").css("top", yPos2); 
             });
             $("#rethink").hover(
                 function () {
@@ -29,7 +30,7 @@
             );
             $("#accept").hover(
                 function () {
-                    $("#adx2").fadeIn(1000);
+                    $("#adx2").fadeIn(2000);
                 },
                 function () {
                     $("#adx2").fadeOut(1000);
